@@ -1,4 +1,19 @@
 
+
+//ids pra serem usados no evento target pra 
+//dizer em que possicao de  array b que vai guardar numeros no
+//local store e quero que fique derteminado numeros
+var ids=[  
+  0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+  ,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34
+  ,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50
+  ,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66
+  ,67,68,69,70,71,72,73,74,75,76,77,78,79,80];
+
+
+
+
+
 var quadros =document.querySelectorAll('.quadros')
 for(let i=0;i<quadros.length;i++){
   quadros[i].setAttribute('id',ids[i])
@@ -6,13 +21,15 @@ for(let i=0;i<quadros.length;i++){
 
 
 
-
+//array criado pra apos sair do broswer os numeros ja estarem no quadros
 let b= JSON.parse(localStorage.getItem('b'))|| []
 var botoes=document.querySelectorAll(' div > button')
 
+
+
 for(let i=0;i<botoes.length;i++){
 botoes[i].addEventListener('click',
-
+ //acao de digita no quadros
 function imprimirnumero(messagem){
   
   var s=document.querySelectorAll('.quadros')
@@ -75,7 +92,7 @@ if(s[i].innerHTML!=0){
 
 }
 
-
+//array pra corrigir jogo 
 var checkarray=[
 ['6','8','9,','5','3','7','2','1','4']
 ['7','4','2','8','1','9','5','3','6'],
@@ -99,6 +116,7 @@ takestorage()
 
 
 //pegas o numeros de cada quadro e guardados  no localStorage  e imprimir na pagina
+///quando houve o evento onload
 function takestorage(){
 
   var f=JSON.parse(localStorage.getItem('b'))||[];
